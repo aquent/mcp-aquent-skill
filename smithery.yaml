@@ -1,0 +1,10 @@
+# https://smithery.ai/docs/build/project-config/smithery.yaml
+runtime: external
+metadata:
+  name: Aquent Jobs
+  description: >
+    First-party hosted MCP server for Aquent's talent marketplace.
+    Connect to https://jobs.mcp.skill.com/mcp directly; this server cannot
+    be self-hosted because it requires access to Aquent's internal database.
+  url: https://jobs.mcp.skill.com/mcp
+  transport: streamable-http
