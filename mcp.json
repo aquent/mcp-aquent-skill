@@ -1,7 +1,8 @@
 {
-  "mcpServers": {
-    "skillJobSearch": {
-      "url": "https://jobs.mcp.skill.com/mcp"
+    "mcpServers": {
+        "mcp-jobs": {
+            "type": "http",
+            "url": "https://jobs.mcp.skill.com/mcp"
+        }
     }
-  }
 }
