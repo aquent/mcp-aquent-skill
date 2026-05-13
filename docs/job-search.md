@@ -15,7 +15,7 @@ This MCP server is first-party hosted; not user-installable; production endpoint
 | Detail | Information |
 | --- | ----------- |
 | URL: | https://jobs.mcp.skill.com/mcp |
-| Format: | Model Context Protocol (JSON-RPC 2.0 via SSE) |
+| Format: | Model Context Protocol (JSON-RPC 2.0 over Streamable HTTP) |
 | Update frequency: | Real-time (Live database access) |
 | Coverage: | All active Aquent job postings |
 | Authentication required: | No |
@@ -24,7 +24,7 @@ This MCP server is first-party hosted; not user-installable; production endpoint
 
 ## Connect
 
-Add a remote MCP connector pointing at `https://jobs.mcp.skill.com/mcp` in your MCP client. The transport is Streamable HTTP. OAuth 2.1 metadata is discoverable at `https://jobs.mcp.skill.com/.well-known/oauth-authorization-server`.
+Add a remote MCP connector pointing at `https://jobs.mcp.skill.com/mcp` in your MCP client. The transport is Streamable HTTP; no authentication is required.
 
 ### Claude.ai (web)
 
@@ -34,6 +34,52 @@ Settings → Connectors → Add custom connector → URL `https://jobs.mcp.skill
 
 Settings → Apps & Connectors → Create → URL `https://jobs.mcp.skill.com/mcp`. The app exposes `search` and `fetch` and is therefore eligible for Company Knowledge in ChatGPT Business / Enterprise / Edu.
 
+## Try it
+
+Three canned queries to confirm the server is reachable and exercise the most-used tools. Paste these into your MCP client (or call them directly from the MCP Inspector).
+
+1. **List the available markets.** Returns the canonical list of Aquent markets, which are valid values for the `market` filter on `jobs_search_postings`.
+
+   ```json
+   {
+     "tool": "jobs_list_markets",
+     "arguments": {}
+   }
+   ```
+
+2. **Search for designers in Boston.** Returns up to five active postings whose title or description matches the keyword and whose location matches "Boston". Each result includes a numeric `id` you can pass to `jobs_get_details`.
+
+   ```json
+   {
+     "tool": "jobs_search_postings",
+     "arguments": {
+       "keyword": "designer",
+       "location": "Boston",
+       "limit": 5
+     }
+   }
+   ```
+
+3. **Fetch the full details for one posting.** Use any `id` returned by step 2.
+
+   ```json
+   {
+     "tool": "jobs_get_details",
+     "arguments": {
+       "id": "<id-from-step-2>"
+     }
+   }
+   ```
+
+For ChatGPT-shaped clients, the same three steps map to `jobs_list_markets` → `search` (with `query: "designer Boston"`) → `fetch` (with the id returned by `search`).
+
+### Natural-language variants
+
+If you are exercising the server through a chat-style client, the prompts below produce the same calls:
+
+- "What markets does Aquent operate in?"
+- "Show me five designer roles in Boston."
+- "Give me the full details for posting `<id>`."
 
 ## Server Capabilities
 
@@ -73,6 +119,6 @@ You can submit searches to the MCP server using natural language. The following 
 
 ## Support
 
-**Issues:** https://github.com/aquent/mcp-jobs/issues
+**Issues:** https://github.com/aquent/mcp-aquent-skill/issues
 **Email:** mcp-support@aquent.com
 **Status:** https://status.aquent.com
