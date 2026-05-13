@@ -5,10 +5,10 @@
   "description": "First-party hosted MCP server providing read-only access to Aquent's job postings, markets, locations, industries, and practices. Connect to the production endpoint to search and retrieve Aquent's live talent-marketplace data; this server is not designed for self-hosting because it requires access to Aquent's internal PostgreSQL database.",
   "websiteUrl": "https://aquent.com",
   "repository": {
-    "url": "https://github.com/aquent/mcp-jobs",
+    "url": "https://github.com/aquent/mcp-aquent-skill",
     "source": "github"
   },
-  "version": "0.0.1",
+  "version": "1.0.0",
   "remotes": [
     {
       "type": "streamable-http",
@@ -21,11 +21,7 @@
       "category": "hr-and-recruiting",
       "tags": ["jobs", "recruiting", "talent", "search", "aquent", "read-only"],
       "transport": "streamable-http",
-      "authentication": {
-        "type": "oauth2",
-        "scopesSupported": ["jobs:read"],
-        "metadataUrl": "https://jobs.mcp.skill.com/.well-known/oauth-authorization-server"
-      },
+      "authentication": { "type": "none" },
       "capabilities": {
         "tools": [
           "jobs_search_postings",
