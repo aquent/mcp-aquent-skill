@@ -72,6 +72,7 @@ You can submit searches to the MCP server using natural language. The following 
 - ...
 
 ## Support
+
 **Issues:** https://github.com/aquent/mcp-jobs/issues
 **Email:** mcp-support@aquent.com
 **Status:** https://status.aquent.com
