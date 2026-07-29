@@ -1,0 +1,59 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "com.aquent/mcp-jobs",
+  "title": "Aquent Jobs",
+  "description": "First-party hosted MCP server providing read-only access to Aquent's job postings, markets, locations, industries, and practices. Connect to the production endpoint to search and retrieve Aquent's live talent-marketplace data; this server is not designed for self-hosting because it requires access to Aquent's internal PostgreSQL database.",
+  "websiteUrl": "https://aquent.com",
+  "repository": {
+    "url": "https://github.com/aquent/mcp-aquent-skill",
+    "source": "github"
+  },
+  "version": "1.0.0",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://jobs.mcp.skill.com/mcp"
+    }
+  ],
+  "_meta": {
+    "io.modelcontextprotocol.registry/publisher-provided": {
+      "publisher": "Aquent, LLC",
+      "category": "hr-and-recruiting",
+      "tags": ["jobs", "recruiting", "talent", "search", "aquent", "read-only"],
+      "transport": "streamable-http",
+      "authentication": { "type": "none" },
+      "capabilities": {
+        "tools": [
+          "jobs_search_postings",
+          "jobs_get_details",
+          "jobs_list_markets",
+          "jobs_list_locations",
+          "jobs_list_industries",
+          "jobs_list_practices",
+          "search",
+          "fetch"
+        ],
+        "resources": [
+          "jobs://markets",
+          "jobs://locations",
+          "jobs://postings/{id}",
+          "jobs://search-filters"
+        ],
+        "prompts": [
+          "job-search-assistant",
+          "job-posting-summary",
+          "compare-postings"
+        ],
+        "completions": ["market", "location"],
+        "readOnly": true,
+        "rateLimitPerMinute": 60
+      },
+      "buildInfo": {
+        "tool": "spring-boot",
+        "version": "4.0.3",
+        "language": "java-25",
+        "baseImage": "amazoncorretto:25-alpine"
+      }
+    }
+  }
+}

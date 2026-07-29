@@ -1,9 +1,5 @@
 {
     "mcpServers": {
-        "mcp-jobs": {
-            "type": "http",
-            "url": "https://jobs.mcp.skill.com/mcp"
-        },
         "mcp-target": {
             "type": "http",
             "url": "https://target.mcp.skill.com/mcp"

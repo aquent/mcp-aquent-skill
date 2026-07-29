@@ -10,8 +10,8 @@ Each Skill.com capability is published as its own MCP server under the mcp.skill
 
 | Server | Endpoint | Status | What it does |
 | :--- | :--- | :---: | :--- |
-| _[Jobs](docs/job-search.md)_ | jobs.mcp.skill.com   | **Live** | Connects agents directly to Skill and Aquent’s live job marketplace where you can search, filter, and analyze active job postings against authoritative, human-vetted data. |
-| _[Target](docs/target-descriptions.md)_ | target.mcp.skill.com | **Live** | Turns a raw job description into a structured, recruiter-ready summary, sourcing keywords, and a normalized title. |
+| _[Jobs](mcp/jobs/README.md)_ | jobs.mcp.skill.com   | **Live** | Connects agents directly to Skill and Aquent’s live job marketplace where you can search, filter, and analyze active job postings against authoritative, human-vetted data. |
+| _[Target](mcp/target/README.md)_ | target.mcp.skill.com | **Live** | Turns a raw job description into a structured, recruiter-ready summary, sourcing keywords, and a normalized title. |
 
 Looking for a specific capability? [Talk to us](https://skill.com/contact) about what you’d like to see next.
 
@@ -29,10 +29,10 @@ We publish a machine-readable index at [skill.com/llms.txt](skill.com/llms.txt) 
 
 ## About Us
 
-### Aquent
+### ![Aquent](assets/aquent-logo.svg)
 
 Aquent is the leading global creative staffing company, with more than 40 years of experience connecting businesses with the elite talent they need to excel. We combine that expertise with proprietary recruiting technology and a genuine commitment to the people we place. Because when the right people find the right work, everyone wins.
 
-### Skill.com
+### ![Skill](assets/skill-logo.svg)
 
 Skill.com is the recruiting technology company built to unlimit the search. Skill.com builds upon the pioneering legacy and staffing expertise of sibling company Aquent, founded by industry veteran John H. Chuang in 1986. Aquent is an award-winning global staffing agency that specializes in the marketing, creative, and design space. Today, Aquent partners with Fortune 500s, SMBs, governments, and nonprofit organizations around the world, and employs 10,000 professionals annually.
