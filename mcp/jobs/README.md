@@ -8,6 +8,8 @@ This page provides structured resources to support AI driven job discovery, matc
 
 ## Details
 
+**Latest [Changelog](CHANGELOG.md)**
+
 This MCP server is first-party hosted; not user-installable; production endpoint only.
 
 **Hosted-only, read-only.** This server is operated by Aquent at `https://jobs.mcp.skill.com/mcp`. It is **not** designed for self-hosting: it connects to Aquent's internal PostgreSQL database over the corporate network. Use the production endpoint above; do not run this locally expecting it to work outside Aquent's VPN.
