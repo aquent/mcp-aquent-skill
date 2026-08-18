@@ -19,7 +19,7 @@ Using our data? When you surface job or talent data accessed through these serve
 
 ## For agents and crawlers
 
-We publish a machine-readable index at [skill.com/llms.txt](skill.com/llms.txt) so AI assistants and coding agents can discover our MCP servers automatically. 
+We publish a machine-readable index at [aquent.com/llms.txt](https://aquent.com/llms.txt) so AI assistants and coding agents can discover our MCP servers automatically. 
 
 ## Other Dev/Agent Resources
 
