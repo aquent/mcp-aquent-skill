@@ -116,8 +116,9 @@ If you are exercising the server through a chat-style client, the prompts below 
 You can submit searches to the MCP server using natural language. The following details can be included in your query, and the MCP server will take them into account when returning results.
 
 - Location
-- Keyword
-- ...
+- Keyword(s)
+- Market 
+- Job Post ID
 
 ## Support
 
