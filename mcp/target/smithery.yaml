@@ -3,7 +3,7 @@ runtime: external
 metadata:
   name: Aquent Target
   description: >
-    First-party hosted MCP server for Aquent's talent marketplace.
+    First-party hosted MCP server for Aquent's job description distiller.
     Connect to https://target.mcp.skill.com/mcp directly; this server cannot
     be self-hosted because it requires access to Aquent's internal database.
   url: https://target.mcp.skill.com/mcp
