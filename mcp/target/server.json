@@ -1,8 +1,8 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "com.aquent/mcp-jobs",
-  "title": "Aquent Jobs",
-  "description": "First-party hosted MCP server providing read-only access to Aquent's job postings, markets, locations, industries, and practices. Connect to the production endpoint to search and retrieve Aquent's live talent-marketplace data; this server is not designed for self-hosting because it requires access to Aquent's internal PostgreSQL database.",
+  "title": "Aquent Target",
+  "description": "Point an AI agent at a job description. Get back a clean summary, sourcing keywords, and a normalized title in one call. Hiring inputs are messy: a description copied from a requisition system, a few notes from an intake call with the hiring manager, a title that doesn't quite fit the role. The Target MCP server cleans that up instantly, so recruiters and hiring workflows can act on a clear, consistent definition of the role. It's powered by the same talent-intelligence engine behind Skill & Aquent's staffing operations  and is not a generic summarizer.",
   "websiteUrl": "https://aquent.com",
   "repository": {
     "url": "https://github.com/aquent/mcp-aquent-skill",
@@ -12,7 +12,7 @@
   "remotes": [
     {
       "type": "streamable-http",
-      "url": "https://jobs.mcp.skill.com/mcp"
+      "url": "https://target.mcp.skill.com/mcp"
     }
   ],
   "_meta": {
@@ -23,28 +23,10 @@
       "transport": "streamable-http",
       "authentication": { "type": "none" },
       "capabilities": {
-        "tools": [
-          "jobs_search_postings",
-          "jobs_get_details",
-          "jobs_list_markets",
-          "jobs_list_locations",
-          "jobs_list_industries",
-          "jobs_list_practices",
-          "search",
-          "fetch"
-        ],
-        "resources": [
-          "jobs://markets",
-          "jobs://locations",
-          "jobs://postings/{id}",
-          "jobs://search-filters"
-        ],
-        "prompts": [
-          "job-search-assistant",
-          "job-posting-summary",
-          "compare-postings"
-        ],
-        "completions": ["market", "location"],
+        "tools": [],
+        "resources": [],
+        "prompts": [],
+        "completions": [],
         "readOnly": true,
         "rateLimitPerMinute": 60
       },
